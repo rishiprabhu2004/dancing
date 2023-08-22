@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dancing Robot</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  .robot {
+    width: 150px;
+    height: 200px;
+    position: relative;
+    animation: dance 2s infinite alternate;
+  }
+
+  .head {
+    width: 70px;
+    height: 70px;
+    background-color:blue;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 40px;
+  }
+
+  .body {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 70px;
+    left: 25px;
+  }
+
+  .arm {
+    width: 20px;
+    height: 80px;
+    background-color: rgb(0, 128, 53);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    transform-origin: top center;
+    animation: wave 1s infinite alternate;
+  }
+
+  .arm.right {
+    left: 130px;
+    animation-delay: 0.5s;
+  }
+
+  .leg {
+    width: 30px;
+    height: 100px;
+    background-color: rgb(41, 128, 0);
+    position: absolute;
+    top: 170px;
+    left: 0;
+    transform-origin: top center;
+    animation: bounce 1s infinite alternate;
+  }
+
+  .leg.right {
+    left: 120px;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes dance {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="robot">
+    <div class="head"></div>
+    <div class="body"></div>
+    <div class="arm"></div>
+    <div class="arm right"></div>
+    <div class="leg"></div>
+    <div class="leg right"></div>
+  </div>
+</body>
+</html>
